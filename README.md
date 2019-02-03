@@ -7,7 +7,16 @@
 * Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin.git`
 * [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
 
+2. Install 'pandas' python library
 
-2.Install Flask (Framework for running python web applications)
+3. Install Flask (Framework for running python web applications)
 
   $ sudo pip install Flask
+  
+  Or any other method based on OS being Used.
+ 
+3. After Intalling all the dependencies:
+    
+    i.  run the python file 'app.py' 
+ 
+    ii. go to the url: 127.0.0.1:5000
