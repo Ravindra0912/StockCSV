@@ -1,16 +1,17 @@
 from flask import Flask,render_template
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
-
+# function to get all the attributes for each stock in a file.
 def filter(filename):
 
-    df = pd.read_csv(filename)
+    df = pd.read_csv("STOCK CSV FILES/"+filename)
     attribute_list = list(df)
     attribute_list = attribute_list[2:52]
     full_list = []
-    f = open(filename)
+    f = open("STOCK CSV FILES/"+filename)
     count = 0
     for line in f:
         count += 1
@@ -36,6 +37,14 @@ def index():
 
 @app.route('/<filename>')
 def file(filename):
+    all_files = os.listdir('STOCK CSV FILES')
+    requested_file = filename
+    for file in all_files:
+        name = file[:-4]
+        name = name.split("_")
+        if requested_file in name:
+            filename = file
+            break
     full_list = filter(filename)
     stock_names=[]
     f = filename.split('_')
